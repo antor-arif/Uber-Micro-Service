@@ -4,6 +4,9 @@ const express = require('express');
 const app = express();
 const connect = require('./db/db');
 connect();
+const rabbitMq = require('./service/rabbit')
+
+rabbitMq.connect();
 
 const cookieParser = require('cookie-parser');
 
