@@ -5,7 +5,9 @@ const app = express()
 const connect = require('./db/db')
 connect()
 const cookieParser = require('cookie-parser')
+const rabbitMq = require('./services/rabbit')
 
+rabbitMq.connect();
 
 
 app.use(express.json())
@@ -14,4 +16,4 @@ app.use(cookieParser())
 
 
 
-module.exports = app
+module.exports = app;
